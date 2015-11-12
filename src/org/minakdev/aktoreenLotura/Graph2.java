@@ -35,7 +35,7 @@ public class Graph2 {
 		}
 	}
 		
-	public boolean estanConectados(String a1, String a2){
+	public boolean konektatuta(String a1, String a2){
 		Queue<Integer> aztertuGabeak = new LinkedList<Integer>();
 	
 		int pos1 = th.get(a1);

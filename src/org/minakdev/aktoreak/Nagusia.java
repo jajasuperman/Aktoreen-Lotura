@@ -11,6 +11,38 @@ import java.util.Scanner;
 
 import TartetikKanpoException.TartetikKanpoException;
 
+/*
+  	
+
+Nota orokorra: *** (9)
+
+Dokumentazioa: ***
+
+Klaseen diseinua, datu-egiturak eta algoritmoak. Kostuaren analisia: ***
+
+Metodo nagusien artean fitxategitik kargatzeko metodoa agertu beharko litzateke.
+
+ 
+
+“Nagusia” klasean bi atributu ez dira egokiak: String eta Scanner ez dira atributuak, aldagai lokalak baizik.
+
+ 
+
+Nagusia izenako klase batek ez du zentzurik. Adibidez, kargatu() metodoa ez litzateke Nagusia-n egon behar, domeinuko klase batean baizik.
+
+ 
+
+AktoreBatenPelikulakBueltatu() metodoa ere, ez litzateke Nagusia klasean egon behar.
+
+ 
+
+Kodea: ***
+
+ 
+
+mergeSort metodoa ez da publikoa izan behar
+ */
+
 public class Nagusia {
 	
 	private static Nagusia nireNagusia;
