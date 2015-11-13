@@ -43,8 +43,29 @@ public class Graph2 {
 		boolean aurkitua = false;
 		boolean[] aztertuak = new boolean[th.size()];
 	
-		// KODEA OSATU
-	
+		aztertuak[pos1] = true;
+		
+		for(int i: adjList[pos1]) {
+			aztertuGabeak.add(i);
+		}
+		
+		while(!aurkitua && !aztertuGabeak.isEmpty()) {
+				
+			Integer egungoa = aztertuGabeak.remove();
+			
+			if (egungoa == pos2) {
+				aurkitua = true;
+			}
+			else { 
+				aztertuak[egungoa] = true;
+				for(int i: adjList[egungoa]) {
+					if(!aztertuak[i])
+						aztertuGabeak.add(i);
+				}
+			}
+		
+		}
+		
 		return aurkitua;
 	}
 }
