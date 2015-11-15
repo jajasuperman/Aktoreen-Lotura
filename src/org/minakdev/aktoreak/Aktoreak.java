@@ -36,6 +36,8 @@ public class Aktoreak {
 		Scanner sc = new Scanner(System.in);
 		String fitxategia = "aktore-zerrenda_handia.txt";
 		
+		Aktoreak.getNireAktoreak().fitxategiaKargatu(fitxategia);
+		
 		System.out.println("AKOTEAK ETA PELIKULAK KUDEATZEKO APLIKAZIOA");
 		do{
 			System.out.println("\nAplikazio honek aukera hauek ditu:");
