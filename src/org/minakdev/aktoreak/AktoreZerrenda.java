@@ -50,7 +50,7 @@ public class AktoreZerrenda {
 		}
 	}
 	
-	public void mergeSort(Aktorea[] taula){
+	private void mergeSort(Aktorea[] taula){
 		 this.mergeSort(taula, 0, taula.length-1);
 		}
 		
