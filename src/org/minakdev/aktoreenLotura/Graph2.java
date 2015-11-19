@@ -1,6 +1,7 @@
 package org.minakdev.aktoreenLotura;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -76,10 +77,7 @@ public class Graph2 {
 		boolean[] aztertuak = new boolean[th.size()];
 	
 		aztertuak[pos1] = true;
-		
-		for(int i: adjList[pos1]) {
-			aztertuGabeak.add(i);
-		}
+		aztertuGabeak.add(pos1);
 		
 		while(!aurkitua && !aztertuGabeak.isEmpty()) {
 				
@@ -89,15 +87,62 @@ public class Graph2 {
 				aurkitua = true;
 			}
 			else { 
-				aztertuak[egungoa] = true;
 				for(int i: adjList[egungoa]) {
 					if(!aztertuak[i])
 						aztertuGabeak.add(i);
+						aztertuak[i] = true;
 				}
 			}
 		
 		}
 		
 		return aurkitua;
+	}
+	
+	public ArrayList<String> konektatutaErlazioa(String a1, String a2){
+		Integer[] nondik= new Integer[th.size()];
+		Queue<Integer> aztertuGabeak = new LinkedList<Integer>();
+		
+		int pos1 = th.get(a1);
+		int pos2 = th.get(a2);
+		boolean aurkitua = false;
+		boolean[] aztertuak = new boolean[th.size()];
+	
+		aztertuak[pos1] = true;
+		nondik[pos1] = -1;
+		aztertuGabeak.add(pos1);
+		
+		
+		while(!aurkitua && !aztertuGabeak.isEmpty()) {
+				
+			Integer egungoa = aztertuGabeak.remove();
+			
+			if (egungoa == pos2) {
+				aurkitua = true;
+			}
+			else { 
+				for(int i: adjList[egungoa]) {
+					if(!aztertuak[i])
+						aztertuGabeak.add(i);
+						aztertuak[i]= true;
+						nondik[i] = egungoa;
+				}
+			}
+		
+		}
+		if(!aurkitua){
+			return null;
+		}
+		else{
+			int j = pos2;
+			ArrayList<String> eran = new ArrayList<String>();
+			while(j!=pos1){
+				eran.add(this.keys[j]);
+				j = nondik[j];
+			}
+			eran.add(this.keys[j]);
+			Collections.reverse(eran);
+			return eran;
+		}
 	}
 }
