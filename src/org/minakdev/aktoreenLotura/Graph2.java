@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import org.minakdev.aktoreak.AktoreZerrenda;
+import org.minakdev.aktoreak.Aktorea;
+import org.minakdev.aktoreak.Pelikula;
 
 public class Graph2 {
 	HashMap<String, Integer> th;
@@ -15,16 +17,46 @@ public class Graph2 {
 	public void grafoaSortu(AktoreZerrenda lAktoreak) {
 		// Post: aktoreen zerrendatik grafoa sortzen du
 		//       Adabegiak aktoreen izenak eta pelikulen izenburuak dira 
-		
+		int kont = 0;
 		// 1. pausoa: â€œthâ€� bete
-		// KODEA OSATU
+		th = new HashMap<String, Integer>();
+		
+		for (int j = 0; j < lAktoreak.luzera(); j++){
+			Aktorea a = lAktoreak.getZerrenda().get(j);
+			th.put(a.getIzena(), kont++);
+			ArrayList<Pelikula> pz = a.pelikulakBueltatu().getPelikulaZerrenda();
+			for(int k=0; k < pz.size(); k++){
+				Pelikula p = pz.get(k);
+				if (!(th.containsKey(p.getIzena()))){
+					th.put(p.getIzena(), kont++);
+				}
+			}
+		}
 		
 		// 2. pausoa: â€œkeysâ€� bete
 		keys = new String[th.size()];
 		for (String k: th.keySet()) keys[th.get(k)] = k;
 		
 		// 3. pausoa: â€œadjListâ€� bete
-		// KODEA OSATU
+		adjList =  (ArrayList<Integer>[]) new ArrayList[th.size()];
+		
+		for(int w = 0; w < th.size(); w++){
+			adjList[w] = new ArrayList<Integer>();
+		}
+		
+		for(int m = 0; m < lAktoreak.luzera(); m++){
+			Aktorea eaktorea = lAktoreak.getZerrenda().get(m);
+			ArrayList<Pelikula> epelikulak = eaktorea.pelikulakBueltatu().getPelikulaZerrenda();
+			int aktore = th.get(eaktorea.getIzena());
+			for(int n=0; n < epelikulak.size(); n++){
+				int pelikula = th.get(epelikulak.get(n).getIzena());
+				adjList[aktore].add(pelikula);
+				adjList[pelikula].add(aktore);
+				
+			}
+			
+		}
+		
 	}
 	
 	public void print(){
