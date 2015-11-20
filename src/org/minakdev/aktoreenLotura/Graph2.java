@@ -88,9 +88,10 @@ public class Graph2 {
 			}
 			else { 
 				for(int i: adjList[egungoa]) {
-					if(!aztertuak[i])
+					if(!aztertuak[i]){
 						aztertuGabeak.add(i);
 						aztertuak[i] = true;
+					}
 				}
 			}
 		
@@ -122,10 +123,11 @@ public class Graph2 {
 			}
 			else { 
 				for(int i: adjList[egungoa]) {
-					if(!aztertuak[i])
+					if(!aztertuak[i]){
 						aztertuGabeak.add(i);
 						aztertuak[i]= true;
 						nondik[i] = egungoa;
+					}
 				}
 			}
 		
