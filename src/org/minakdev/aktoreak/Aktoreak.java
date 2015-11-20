@@ -227,6 +227,10 @@ public class Aktoreak {
 		return this.aktoreZerrenda.getZerrenda();
 	}
 	
+	public AktoreZerrenda aktoreZerrendaItzuli(){
+		return this.aktoreZerrenda;
+	}
+	
 	private void sortuAktorea(Scanner pFitxategi) {
 		HashMap<String, Pelikula> hashTable = new HashMap<String, Pelikula>();
 		int k=0;
