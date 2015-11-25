@@ -69,6 +69,7 @@ public class Graph2 {
 	}
 		
 	public boolean konektatuta(String a1, String a2){
+		//aurre: parametroko aktoreak zerrendan (grafoan) egon behar dute
 		Queue<Integer> aztertuGabeak = new LinkedList<Integer>();
 	
 		int pos1 = th.get(a1);
@@ -101,6 +102,7 @@ public class Graph2 {
 	}
 	
 	public ArrayList<String> konektatutaErlazioa(String a1, String a2){
+		//aurre: parametroko aktoreak zerrendan (grafoan) egon behar dute
 		Integer[] nondik= new Integer[th.size()];
 		Queue<Integer> aztertuGabeak = new LinkedList<Integer>();
 		

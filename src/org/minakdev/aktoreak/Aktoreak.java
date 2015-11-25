@@ -31,87 +31,87 @@ public class Aktoreak {
 	}
 
 	
-	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		String fitxategia = "aktore-zerrenda_handia.txt";
-		
-		Aktoreak.getNireAktoreak().fitxategiaKargatu(fitxategia);
-		
-		System.out.println("AKOTEAK ETA PELIKULAK KUDEATZEKO APLIKAZIOA");
-		do{
-			System.out.println("\nAplikazio honek aukera hauek ditu:");
-			System.out.println("1 - Aktore bat bilatu");
-			System.out.println("2 - Aktore berri bat txertatu");
-			System.out.println("3 - Aktore baten pelikulak ikusi");
-			System.out.println("4 - Pelikula baten aktoreak ikusi");
-			System.out.println("5 - Pelikula batek lortutako dirua ezarri");
-			System.out.println("6 - Aktore bat ezabatu");
-			System.out.println("7 - Aktoreen zerrenda gorde");
-			System.out.println("8 - Irten");
-			
-			System.out.println();
-			
-			int aukera = 0;
-			boolean ezAmaitu = true;
-			
-			do {
-				try {
-					System.out.println("Hautatu nahi duzun aukera: ");
-					aukera = sc.nextInt();	
-					if(aukera > 8 || aukera < 1){
-						throw new TartetikKanpoException("Zenbaki okerra hautatu duzu.");
-					}
-					ezAmaitu = false;
-				} catch (InputMismatchException  e) {
-					sc.nextLine();
-					aukera = 0;
-					System.out.println("Zenbaki okerra hautatu duzu.");
-				} catch (TartetikKanpoException e) {
-					System.out.println(e.getMessage());
-				}
-			} while (ezAmaitu);
-			
-			if (aukera == 1){
-				String izena =Aktoreak.getNireAktoreak().stringEskatu();
-				if (Aktoreak.getNireAktoreak().aktoreaBilatu(izena) == null) 
-					System.out.println("Aktorea ez da bilatu");
-				else
-					System.out.println("Aktorea bilatu da.");
-			}
-			else if(aukera == 2){
-				String izena =Aktoreak.getNireAktoreak().stringEskatu();
-				Aktoreak.getNireAktoreak().aktoreaTxertatu(izena);
-			}
-			else if(aukera == 3){
-				Aktoreak.getNireAktoreak().aktoreBatenPelikulakBueltatu();
-			}
-			else if(aukera == 4){
-				Aktoreak.getNireAktoreak().pelikulaBatekoAktoreakBueltatu();
-			}
-			else if(aukera == 5){
-				Aktoreak.getNireAktoreak().diruaGehitu();
-			}
-			else if(aukera == 6){
-				String izena =Aktoreak.getNireAktoreak().stringEskatu();
-				Aktoreak.getNireAktoreak().aktoreaEzabatu(izena);
-			}
-			else if(aukera == 7){
-				try {
-					Aktoreak.getNireAktoreak().aktoreenZerrendaGorde();
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				} catch (UnsupportedEncodingException e) {
-					e.printStackTrace();
-				} 
-			}
-			else if(aukera == 8){
-				System.exit(0);
-			}
-		}while(true);
-		
-		
-	}
+//	public static void main(String[] args) {
+//		
+//		Scanner sc = new Scanner(System.in);
+//		String fitxategia = "aktore-zerrenda_handia.txt";
+//		
+//		Aktoreak.getNireAktoreak().fitxategiaKargatu(fitxategia);
+//		
+//		System.out.println("AKOTEAK ETA PELIKULAK KUDEATZEKO APLIKAZIOA");
+//		do{
+//			System.out.println("\nAplikazio honek aukera hauek ditu:");
+//			System.out.println("1 - Aktore bat bilatu");
+//			System.out.println("2 - Aktore berri bat txertatu");
+//			System.out.println("3 - Aktore baten pelikulak ikusi");
+//			System.out.println("4 - Pelikula baten aktoreak ikusi");
+//			System.out.println("5 - Pelikula batek lortutako dirua ezarri");
+//			System.out.println("6 - Aktore bat ezabatu");
+//			System.out.println("7 - Aktoreen zerrenda gorde");
+//			System.out.println("8 - Irten");
+//			
+//			System.out.println();
+//			
+//			int aukera = 0;
+//			boolean ezAmaitu = true;
+//			
+//			do {
+//				try {
+//					System.out.println("Hautatu nahi duzun aukera: ");
+//					aukera = sc.nextInt();	
+//					if(aukera > 8 || aukera < 1){
+//						throw new TartetikKanpoException("Zenbaki okerra hautatu duzu.");
+//					}
+//					ezAmaitu = false;
+//				} catch (InputMismatchException  e) {
+//					sc.nextLine();
+//					aukera = 0;
+//					System.out.println("Zenbaki okerra hautatu duzu.");
+//				} catch (TartetikKanpoException e) {
+//					System.out.println(e.getMessage());
+//				}
+//			} while (ezAmaitu);
+//			
+//			if (aukera == 1){
+//				String izena =Aktoreak.getNireAktoreak().stringEskatu();
+//				if (Aktoreak.getNireAktoreak().aktoreaBilatu(izena) == null) 
+//					System.out.println("Aktorea ez da bilatu");
+//				else
+//					System.out.println("Aktorea bilatu da.");
+//			}
+//			else if(aukera == 2){
+//				String izena =Aktoreak.getNireAktoreak().stringEskatu();
+//				Aktoreak.getNireAktoreak().aktoreaTxertatu(izena);
+//			}
+//			else if(aukera == 3){
+//				Aktoreak.getNireAktoreak().aktoreBatenPelikulakBueltatu();
+//			}
+//			else if(aukera == 4){
+//				Aktoreak.getNireAktoreak().pelikulaBatekoAktoreakBueltatu();
+//			}
+//			else if(aukera == 5){
+//				Aktoreak.getNireAktoreak().diruaGehitu();
+//			}
+//			else if(aukera == 6){
+//				String izena =Aktoreak.getNireAktoreak().stringEskatu();
+//				Aktoreak.getNireAktoreak().aktoreaEzabatu(izena);
+//			}
+//			else if(aukera == 7){
+//				try {
+//					Aktoreak.getNireAktoreak().aktoreenZerrendaGorde();
+//				} catch (FileNotFoundException e) {
+//					e.printStackTrace();
+//				} catch (UnsupportedEncodingException e) {
+//					e.printStackTrace();
+//				} 
+//			}
+//			else if(aukera == 8){
+//				System.exit(0);
+//			}
+//		}while(true);
+//		
+//		
+//	}
 	
 	private float diruaEskatu(){
 		float n;
@@ -154,7 +154,7 @@ public class Aktoreak {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		Aktoreak.getNireAktoreak().aktoreakOrdenatu();
+		//Aktoreak.getNireAktoreak().aktoreakOrdenatu();
 	}
 	
 	public void aktoreenZerrendaGorde() throws FileNotFoundException, UnsupportedEncodingException {		
