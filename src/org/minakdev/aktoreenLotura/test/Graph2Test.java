@@ -40,7 +40,7 @@ public class Graph2Test {
 		Graph2 grafoa = new Graph2();
 		ArrayList<String> erlazioa;		
 		
-		Aktoreak.getNireAktoreak().fitxategiaKargatu("aktore-zerrenda_lotura2.txt");
+		Aktoreak.getNireAktoreak().fitxategiaKargatu("aktore-zerrenda_handia.txt");
 
 		grafoa.grafoaSortu(Aktoreak.getNireAktoreak().aktoreZerrendaItzuli());
 		grafoa.print();
