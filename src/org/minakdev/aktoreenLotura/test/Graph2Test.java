@@ -20,20 +20,6 @@ public class Graph2Test {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void testGrafoaSortu() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testPrint() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testKonektatuta() {
-		fail("Not yet implemented");
-	}
 	
 	@Test
 	public void testKonektatutaErlazioa() {
