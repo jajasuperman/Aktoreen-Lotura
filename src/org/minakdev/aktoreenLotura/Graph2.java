@@ -24,7 +24,9 @@ public class Graph2 {
 		
 		for (int j = 0; j < lAktoreak.luzera(); j++){
 			Aktorea a = lAktoreak.getZerrenda().get(j);
-			th.put(a.getIzena(), kont++);
+			if (!(th.containsKey(a.getIzena()))){
+				th.put(a.getIzena(), kont++);
+			}
 			ArrayList<Pelikula> pz = a.pelikulakBueltatu().getPelikulaZerrenda();
 			for(int k=0; k < pz.size(); k++){
 				Pelikula p = pz.get(k);
